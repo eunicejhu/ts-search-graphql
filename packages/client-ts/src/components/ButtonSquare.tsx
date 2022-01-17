@@ -29,8 +29,13 @@ interface ButtonSquareProps {
   children: JSX.Element
 }
 
-const ButtonSquare = ({ children, ...props }: ButtonSquareProps) => (
-  <ButtonContainer {...props}>{children}</ButtonContainer>
-)
+const ButtonSquare = ({ children, ...props }: ButtonSquareProps) => {
+  try {
+    return <ButtonContainer {...props}>{children}</ButtonContainer>
+  } catch (e) {
+    console.log('error loading ButtonSquare', e)
+    return <div></div>
+  }
+}
 
 export default ButtonSquare

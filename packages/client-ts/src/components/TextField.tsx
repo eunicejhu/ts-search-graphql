@@ -42,11 +42,18 @@ interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   value: string
 }
 
-const TextField = ({ className, ...props }: TextFieldProps) => (
-  <TextFieldContainer className={className}>
-    <TextFieldInput {...props} />
-    <MagnifyingGlassLeft />
-  </TextFieldContainer>
-)
+const TextField = ({ className, ...props }: TextFieldProps) => {
+  try {
+    return (
+      <TextFieldContainer className={className}>
+        <TextFieldInput {...props} />
+        <MagnifyingGlassLeft />
+      </TextFieldContainer>
+    )
+  } catch (e) {
+    console.log('error loading TextField', e)
+    return <div></div>
+  }
+}
 
 export default TextField
