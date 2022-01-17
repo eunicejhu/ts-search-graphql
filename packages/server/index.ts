@@ -41,6 +41,13 @@ const typeDefs = gql`
   }
 `
 
+/*
+curl -X POST \
+-H "Content-Type: application/json" \
+-d '{"query": "{countPeople, people { fullName}}"}' \
+http://localhost:3001
+
+*/
 const formatFullName = ({ firstName, lastName }: Person): string => `${firstName} ${lastName}`
 
 const search = (data: Person[], filter: string = ''): Person[] => {
@@ -69,7 +76,7 @@ const resolvers = {
       const data = search(people, filter)
       const startIndex = data.findIndex(({ id }) => id === from) + 1
 
-      return data.slice(startIndex, Math.max(1, limit))
+      return data.slice(startIndex, Math.max(1, limit) + startIndex)
     },
   },
 }

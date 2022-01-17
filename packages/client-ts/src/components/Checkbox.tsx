@@ -64,11 +64,17 @@ interface CheckboxProps {
   onChange: React.ChangeEventHandler
 }
 
-const Checkbox = ({ id, isChecked, onChange, ...props }: CheckboxProps) => (
-  <CheckboxContainer {...props}>
-    <CheckboxInput checked={isChecked} id={id} onChange={onChange} />
-    <CheckboxSymbol />
-  </CheckboxContainer>
-)
+const Checkbox = ({ id, isChecked, onChange, ...props }: CheckboxProps) => {
+  try {
+    return (
+      <CheckboxContainer {...props}>
+        <CheckboxInput checked={isChecked} id={id} onChange={onChange} />
+        <CheckboxSymbol />
+      </CheckboxContainer>
+    )
+  } catch (e) {
+    console.log('error loading Checkbox', e)
+  }
+}
 
 export default Checkbox
