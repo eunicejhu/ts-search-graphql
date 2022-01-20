@@ -1,4 +1,5 @@
 import { ApolloServer, gql } from 'apollo-server'
+import startExpressServer from './express'
 
 import data from './data.json'
 
@@ -89,3 +90,5 @@ const server = new ApolloServer({
 server.listen(PORT).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`)
 })
+
+startExpressServer()
