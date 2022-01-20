@@ -74,7 +74,7 @@ const Checkbox = ({ id, isChecked, onChange, ...props }: CheckboxProps) => {
     )
   } catch (e) {
     console.log('error loading Checkbox', e)
-    return <div></div>
+    return null
   }
 }
 

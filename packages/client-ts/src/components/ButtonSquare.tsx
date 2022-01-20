@@ -34,7 +34,7 @@ const ButtonSquare = ({ children, ...props }: ButtonSquareProps) => {
     return <ButtonContainer {...props}>{children}</ButtonContainer>
   } catch (e) {
     console.log('error loading ButtonSquare', e)
-    return <div></div>
+    return null
   }
 }
 
