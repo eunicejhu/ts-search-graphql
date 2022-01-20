@@ -1,5 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Header = ({ data }) => data.map((value, index) => <td key={index}>{value}</td>)
+import './Table.css'
+import Checkbox from '../Checkbox'
+
+interface HeaderProps {
+  children: JSX.Element[]
+  checked: boolean
+  onChangeHandler: React.ChangeEventHandler
+}
+function Header({ children, checked, onChangeHandler, ...props }: HeaderProps) {
+  return (
+    <>
+      <td>
+        <Checkbox isChecked={checked} onChange={onChangeHandler} {...props} />
+      </td>
+      {children}
+    </>
+  )
+}
 
 export default Header

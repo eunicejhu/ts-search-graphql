@@ -1,0 +1,28 @@
+table tr,
+table tr div {
+  height: 64px;
+}
+table tr td {
+  padding: 4px;
+}
+
+table tbody tr.checked {
+  background-color: #f0f0f0;
+}
+
+tr.thead {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+}
+
+tr td:first-child {
+  width: 6%;
+}
+tr td:not(:first-child) {
+  width: 20%;
+}
+
+tr td.extended {
+  width: 25%;
+}
