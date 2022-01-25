@@ -52,7 +52,7 @@ const TextField = ({ className, ...props }: TextFieldProps) => {
     )
   } catch (e) {
     console.log('error loading TextField', e)
-    return <div></div>
+    return null
   }
 }
 

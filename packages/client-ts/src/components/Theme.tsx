@@ -43,4 +43,6 @@ const Theme = ({ children }: ThemeProps) => (
   <ThemeProvider theme={{ colors: palette, font: 'Maison Neue, sans-serif' }}>{children}</ThemeProvider>
 )
 
+export const useTheme = () => ({ colors: palette, font: 'Maison Neue, sans-serif' })
+
 export default Theme

@@ -1,4 +1,4 @@
-import { ChevronRightBold } from '@pretto/picto'
+import { ChevronRightBold, ChevronLeftBold } from '@pretto/picto'
 import { useState } from 'react'
 
 import './fonts/MaisonNeue.css'
@@ -29,17 +29,19 @@ export default function App() {
       <div>
         <TextField onChange={handleTextFieldChange} placeholder="Search..." value={textFieldValue} />
 
-        <ButtonSquare>
-          <ChevronRightBold />
-        </ButtonSquare>
-
-        <Checkbox isChecked={isChecked} onChange={handleCheckboxChange} />
         <Table
           options={{ checkable: true }}
           data={{
-            header: [],
-            rows: [
-              [<Checkbox data-testid="check-1" id="check-1" isChecked={false} onChange={() => {}} />, '1', 'ava1'],
+            header: { mobile: [], desktop: [] },
+            rows: [],
+            footer: [
+              <p>1-8 of 1765</p>,
+              <ButtonSquare>
+                <ChevronLeftBold />
+              </ButtonSquare>,
+              <ButtonSquare>
+                <ChevronRightBold />
+              </ButtonSquare>,
             ],
           }}
         ></Table>

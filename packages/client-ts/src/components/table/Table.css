@@ -1,28 +1,31 @@
-table tr,
-table tr div {
-  height: 64px;
-}
 table tr td {
-  padding: 4px;
+  padding: 10px;
 }
 
-table tbody tr.checked {
-  background-color: #f0f0f0;
+tr.thead td:first-child {
+  border-radius: 8px 0 0 8px;
 }
 
-tr.thead {
-  width: 100%;
-  border-radius: 8px;
-  background-color: #f0f0f0;
+tr.thead td:last-child {
+  border-radius: 0px 8px 8px 0;
 }
 
-tr td:first-child {
-  width: 6%;
-}
-tr td:not(:first-child) {
-  width: 20%;
+@media screen and (max-width: 480px) {
+  table tr {
+    height: auto;
+  }
 }
 
-tr td.extended {
-  width: 25%;
+@media screen and (min-width: 481px) {
+  table tr {
+    height: 64px;
+  }
+
+  table tr td {
+    padding: 20px;
+  }
+
+  table tr td:not(:first-child) {
+    min-width: fit-content;
+  }
 }

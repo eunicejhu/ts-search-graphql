@@ -3,6 +3,7 @@ var isEqual = require('lodash.isequal')
 interface FindIndex {
   <T>(source: T[], target: T): number
 }
+// source is array of non-duplicate items
 const findIndex: FindIndex = (source, target) => {
   return source.findIndex((element) => isEqual(element, target))
 }
@@ -26,8 +27,9 @@ const toggleElement: ToggleElement = (source, target) => {
 export interface Record {
   id: string
   createdAt: string
-  name: string
   status: string
+  firstName: string
+  lastName: string
 }
 
 interface Action<T> {
